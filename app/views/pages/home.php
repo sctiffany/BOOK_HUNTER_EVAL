@@ -72,7 +72,7 @@
             <span>8.9</span>
             </div>
             <p class="text-gray-400">
-            Biography...
+            <?php echo $author['biography']; ?>
             </p>
             <a
             href="author.html"

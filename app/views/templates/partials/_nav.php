@@ -47,22 +47,22 @@
             <div class="hidden md:flex items-center">
               <a
                 class="text-gray-300 hover:text-white px-3 py-2"
-                href="books.html"
+                href="?books"
                 >Books</a
               >
               <a
                 class="text-gray-300 hover:text-white px-3 py-2"
-                href="authors.html"
+                href="?authors"
                 >Authors</a
               >
             </div>
           </div>
         </div>
         <div x-show="open" class="md:hidden">
-          <a class="block text-gray-300 hover:text-white px-3 py-2" href="#"
+          <a class="block text-gray-300 hover:text-white px-3 py-2" href="?books"
             >Books</a
           >
-          <a class="block text-gray-300 hover:text-white px-3 py-2" href="#"
+          <a class="block text-gray-300 hover:text-white px-3 py-2" href="?authors"
             >Authors</a
           >
         </div>
