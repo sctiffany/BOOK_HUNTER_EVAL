@@ -9,10 +9,16 @@ if (isset($_GET['books'])) {
     include_once '../app/controllers/booksController.php';
     \App\Controllers\BooksController\indexAction($connexion);
 }
+elseif (isset($_GET['bookID'])) {
+    include_once '../app/controllers/booksController.php';
+    \App\Controllers\BooksController\showAction($connexion, $_GET['bookID']);
+}
+
 elseif (isset($_GET['authors'])) {
     include_once '../app/controllers/authorsController.php';
     \App\Controllers\AuthorsController\indexAction($connexion);
 }
+
 else {
     // ROUTE PAR DEFAUT
     // PATTERN : /
