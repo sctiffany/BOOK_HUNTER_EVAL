@@ -3,7 +3,7 @@
     <div class="w-full lg:w-1/3 px-1 lg:px-4 mb-4">
         <img
         class="w-full h-auto rounded-lg"
-        src="https://source.unsplash.com/random/800x600/?book"
+        src="<?php echo $book['cover'] ?>"
         alt="livre"
         />
     </div>

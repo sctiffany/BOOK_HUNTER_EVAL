@@ -15,3 +15,23 @@ function indexAction (PDO $connexion) {
     include '../app/views/authors/index.php';
     $content = ob_get_clean();
 }
+
+
+function showAction (PDO $connexion, int $id) {
+    // Je vais demander des données aux modèles
+    include_once '../app/models/authorsModel.php';
+    $author = \App\Models\AuthorsModel\findOneById($connexion, $id);
+
+    include_once '../app/models/booksModel.php';
+    $books = \App\Models\BooksModel\findAllByAuthorId($connexion, $id);
+
+    //include_once '../app/models/tagsModel.php';
+    //$tag = \App\Models\TagsModel\findAllByBookId($connexion, $id);
+
+    // Je charge la vue 'home' dans $content
+    GLOBAL $content, $title;
+    $title = $author['firstname'] . " " . $author['lastname'];
+    ob_start();
+    include '../app/views/authors/show.php';
+    $content = ob_get_clean();
+}

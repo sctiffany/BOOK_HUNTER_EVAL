@@ -21,8 +21,8 @@ function showAction (PDO $connexion, int $id) {
     include_once '../app/models/booksModel.php';
     $book = \App\Models\BooksModel\findOneById($connexion, $id);
 
-    include_once '../app/models/tagsModel.php';
-    $tag = \App\Models\TagsModel\findAllByBookId($connexion, $id);
+    //include_once '../app/models/tagsModel.php';
+    //$tag = \App\Models\TagsModel\findAllByBookId($connexion, $id);
 
     // Je charge la vue 'home' dans $content
     GLOBAL $content, $title;

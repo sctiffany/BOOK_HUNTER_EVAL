@@ -3,29 +3,14 @@
 
 // ROUTE DES BOOKS
 // PATTERN : /?books
-// CTRL : booksController
-// ACTION : indexAction
 if (isset($_GET['books'])) {
-    include_once '../app/controllers/booksController.php';
-    \App\Controllers\BooksController\indexAction($connexion);
-}
-
-// ROUTE DES BOOKS
-// PATTERN : /?booksID=...
-// CTRL : booksController
-// ACTION : showAction
-elseif (isset($_GET['bookID'])) {
-    include_once '../app/controllers/booksController.php';
-    \App\Controllers\BooksController\showAction($connexion, $_GET['bookID']);
+    include_once '../app/routers/books.php';
 }
 
 // ROUTE DES AUTHORS
 // PATTERN : /?authors
-// CTRL : authorsController
-// ACTION : indexAction
 elseif (isset($_GET['authors'])) {
-    include_once '../app/controllers/authorsController.php';
-    \App\Controllers\AuthorsController\indexAction($connexion);
+    include_once '../app/routers/authors.php';
 }
 
 else {
