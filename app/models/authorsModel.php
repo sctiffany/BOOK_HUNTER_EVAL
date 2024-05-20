@@ -2,13 +2,16 @@
 namespace App\Models\AuthorsModel;
 use \PDO;
 
-function findAll (PDO $connexion): array {
+function findAll (PDO $connexion, $limit = 6): array {
 $sql = "SELECT a.id, a.lastname, a.firstname, a.picture, a.created_at, a.biography, AVG(un.note) AS moyenne_notation
         FROM authors a
         INNER JOIN books b ON b.author_id = a.id
         LEFT JOIN users_notations un ON b.id = un.book_id
         GROUP BY a.id
         ORDER BY moyenne_notation DESC
-        LIMIT 3;";
-return $connexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        LIMIT :limit;";
+$rs = $connexion->prepare($sql);
+$rs->bindValue(':limit', $limit, PDO::PARAM_INT);
+$rs->execute();
+return $rs->fetchAll(PDO::FETCH_ASSOC);
 }

@@ -5,7 +5,7 @@
             <div class="flex items-center">
               <a
                 class="text-white font-bold text-xl flex items-center"
-                href="index.html"
+                href="?"
               >
                 <svg viewBox="0 0 24 24" class="w-8 h-8 mr-2">
                   <path
