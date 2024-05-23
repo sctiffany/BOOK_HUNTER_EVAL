@@ -23,16 +23,11 @@
         <span class="text-yellow-500 mr-1">
             <i class="fas fa-star"></i>
         </span>
-        <span>9.0</span>
+        <span><?php echo $book['note']; ?></span>
         </div>
         <div class="flex flex-wrap">
-        <?php foreach($tags as $tag): ?>
-        <a
-            href="#"
-            class="bg-gray-500 text-white px-3 py-1 rounded-full text-sm font-semibold mr-2 hover:bg-gray-800 hover:text-white"
-            >#<?php echo $tag['name']; ?></a
-        >
-        <?php endforeach; ?>
+        <?php include '../app/views/books/_tags.php'; ?>
+
         </div>
         <a
         href="#"

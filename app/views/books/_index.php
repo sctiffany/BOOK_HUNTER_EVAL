@@ -15,11 +15,12 @@
     />
     <div class="p-4">
         <div class="pb-4">
-        <span
-            class="bg-gray-500 text-white px-3 py-1 rounded-full text-sm font-semibold mr-2"
-        >
-            #society
-        </span>
+        <?php 
+        include_once '../app/models/tagsModel.php';
+        $tags = \App\Models\TagsModel\findAllByBookId($connexion, $book['id']);
+        include '../app/views/books/_tags.php';
+        
+        ?>
 
         </div>
         <h3 class="text-xl font-bold"><?php echo \Core\Helpers\truncate($book['title'], 20) ; ?></h3>
