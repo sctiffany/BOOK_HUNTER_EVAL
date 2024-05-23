@@ -17,9 +17,12 @@ return $rs->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function findOneById (PDO $connexion, int $id): array {
-        $sql = "SELECT *
-                FROM authors
-                WHERE id = :id;";
+        $sql = "SELECT a.id, a.firstname, a.lastname, a.biography, a.picture, a.created_at, AVG(un.note) AS moyenne_notation
+        FROM authors a
+        INNER JOIN books b ON b.author_id = a.id
+        LEFT JOIN users_notations un ON b.id = un.book_id
+        WHERE a.id = :id
+        GROUP BY a.id, a.firstname, a.lastname, a.biography, a.picture, a.created_at;";
         $rs = $connexion->prepare($sql);  // RecordsSet
         $rs->bindValue(':id', $id, \PDO::PARAM_INT);
         $rs->execute();

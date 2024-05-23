@@ -7,8 +7,6 @@ function indexAction (PDO $connexion) {
     include_once '../app/models/booksModel.php';
     $books = \App\Models\BooksModel\findAll($connexion, 6);
 
-    include_once '../app/models/tagsModel.php';
-    $tags = \App\Models\TagsModel\findAllByBookId($connexion, $id);
 
 
     // Je charge la vue 'home' dans $content

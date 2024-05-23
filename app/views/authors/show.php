@@ -17,7 +17,7 @@
         <span class="text-yellow-500 mr-1">
             <i class="fas fa-star"></i>
         </span>
-        <span>9.0</span>
+        <span><?php echo round($author['moyenne_notation'], 1) ?></span>
         </div>
         <ul class="list-disc list-inside text-gray-300">
         <?php foreach($books as $book): ?>
