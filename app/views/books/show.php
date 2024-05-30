@@ -12,7 +12,7 @@
         <p class="text-gray-300 mb-4">
         Par
         <a
-            href="author.html"
+            href="?authors=show&id=<?php echo $book['authorID'] ?>"
             class="hover:text-red-500 underline font-medium"
             ><?php echo $book['firstname'] . " " . $book['lastname']; ?></a
         >

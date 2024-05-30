@@ -13,6 +13,18 @@ elseif (isset($_GET['authors'])) {
     include_once '../app/routers/authors.php';
 }
 
+// ROUTE DES CATEGORIES
+// PATTERN : /?categories
+elseif (isset($_GET['categories'])) {
+    include_once '../app/routers/categories.php';
+}
+
+// ROUTE DES TAGS
+// PATTERN : /?tags
+elseif (isset($_GET['tags'])) {
+    include_once '../app/routers/tags.php';
+}
+
 else {
     // ROUTE PAR DEFAUT
     // PATTERN : /

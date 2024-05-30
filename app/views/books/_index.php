@@ -17,7 +17,7 @@
         <div class="pb-4">
         <?php 
         include_once '../app/models/tagsModel.php';
-        $tags = \App\Models\TagsModel\findAllByBookId($connexion, $book['id']);
+        $tags = \App\Models\TagsModel\findAllByBookId($connexion, $book['bookID']);
         include '../app/views/books/_tags.php';
         
         ?>
@@ -29,7 +29,7 @@
         <span class="text-yellow-500 mr-1">
             <i class="fas fa-star"></i>
         </span>
-        <span><?php echo $book['note'] ?></span>
+        <span><?php echo round($book['moyenne_notation'], 1) ?></span>
         </div>
 
         <p class="text-gray-400">

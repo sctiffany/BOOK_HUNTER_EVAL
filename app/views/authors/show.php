@@ -21,13 +21,13 @@
         </div>
         <ul class="list-disc list-inside text-gray-300">
         <?php foreach($books as $book): ?>
-        <li>
-            <a
-            href="?books=show&id=<?php echo $book['id'] ?>"
-            class="hover:text-red-500 underline font-medium"
-            ><?php echo $book['title'] ?></a
-            >
-        </li>
+            <li>
+                <a
+                href="?books=show&id=<?php echo $book['bookID'] ?>"
+                class="hover:text-red-500 underline font-medium"
+                ><?php echo $book['title'] ?></a
+                >
+            </li>
         <?php endforeach; ?>
         </ul>
     </div>
