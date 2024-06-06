@@ -55,10 +55,10 @@ function findAllByCategoryId (PDO $connexion, int $id): array {
                 GROUP BY b.id
                 ORDER BY moyenne_notation DESC;";
 
-        $rs = $connexion->prepare($sql);
-        $rs->bindValue(':id', $id, PDO::PARAM_INT);
-        $rs->execute();
-        return $rs->fetchAll(PDO::FETCH_ASSOC);
+$rs = $connexion->prepare($sql);
+$rs->bindValue(':id', $id, PDO::PARAM_INT);
+$rs->execute();
+return $rs->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function findAllByTagId (PDO $connexion, int $id): array {
@@ -72,8 +72,8 @@ function findAllByTagId (PDO $connexion, int $id): array {
                 GROUP BY b.id
                 ORDER BY moyenne_notation DESC;";
 
-        $rs = $connexion->prepare($sql);
-        $rs->bindValue(':id', $id, PDO::PARAM_INT);
-        $rs->execute();
-        return $rs->fetchAll(PDO::FETCH_ASSOC);
+$rs = $connexion->prepare($sql);
+$rs->bindValue(':id', $id, PDO::PARAM_INT);
+$rs->execute();
+return $rs->fetchAll(PDO::FETCH_ASSOC);
 }

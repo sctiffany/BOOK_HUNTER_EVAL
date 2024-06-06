@@ -3,9 +3,11 @@ namespace App\Models\TagsModel;
 use \PDO;
 
 function findAll (PDO $connexion): array {
-        $sql = "SELECT *
-                FROM tags
-                ORDER BY name ASC;";
+        $sql = "SELECT t.*, COUNT(bht.book_id) AS nb_livres_par_tag
+                FROM tags t
+                LEFT JOIN books_has_tags bht ON t.id = bht.tag_id
+                GROUP BY t.id
+                ORDER BY nb_livres_par_tag ASC;";
         return $connexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 

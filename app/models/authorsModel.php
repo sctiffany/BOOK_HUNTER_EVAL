@@ -23,8 +23,8 @@ function findOneById (PDO $connexion, int $id): array {
         LEFT JOIN users_notations un ON b.id = un.book_id
         WHERE a.id = :id
         GROUP BY a.id, a.firstname, a.lastname, a.biography, a.picture, a.created_at;";
-        $rs = $connexion->prepare($sql);  // RecordsSet
-        $rs->bindValue(':id', $id, \PDO::PARAM_INT);
-        $rs->execute();
-        return $rs->fetch(\PDO::FETCH_ASSOC);
+$rs = $connexion->prepare($sql);  // RecordsSet
+$rs->bindValue(':id', $id, \PDO::PARAM_INT);
+$rs->execute();
+return $rs->fetch(\PDO::FETCH_ASSOC);
 }
