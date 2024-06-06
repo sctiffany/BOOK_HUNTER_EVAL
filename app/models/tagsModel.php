@@ -10,7 +10,7 @@ function findAll (PDO $connexion): array {
     }
 
 function findAllByBookId (PDO $connexion, int $id): array {
-        $sql = "SELECT *, t.name AS tagName, b.id AS bookID
+        $sql = "SELECT *, t.id AS tagID, t.name AS tagName, b.id AS bookID
                 FROM tags t
                 LEFT JOIN books_has_tags bht ON t.id = bht.tag_id
                 INNER JOIN books b ON b.id = bht.book_id

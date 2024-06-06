@@ -62,7 +62,7 @@ function findAllByCategoryId (PDO $connexion, int $id): array {
 }
 
 function findAllByTagId (PDO $connexion, int $id): array {
-        $sql = "SELECT b.*, a.*, t.*, b.id AS bookID, AVG(un.note) AS moyenne_notation
+        $sql = "SELECT b.*, a.*, t.*, b.id AS bookID, t.id AS tagID, AVG(un.note) AS moyenne_notation
                 FROM books b
                 LEFT JOIN books_has_tags bht ON b.id = bht.book_id
                 INNER JOIN tags t ON bht.tag_id = t.id

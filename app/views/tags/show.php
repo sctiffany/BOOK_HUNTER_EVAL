@@ -1,4 +1,4 @@
-<h2><?php echo $tag['name'] ?></h2>
+<h2 class="text-2xl font-bold mb-4"><?php echo $tag['name'] ?></h2>
 <ul>
     <?php
     include '../app/views/books/_index.php'; ?>
