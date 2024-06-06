@@ -25,6 +25,12 @@ elseif (isset($_GET['tags'])) {
     include_once '../app/routers/tags.php';
 }
 
+// ROUTE DES COLLECTIONS
+// PATTERN : /?collections
+elseif (isset($_GET['collections'])) {
+    include_once '../app/routers/collections.php';
+}
+
 else {
     // ROUTE PAR DEFAUT
     // PATTERN : /

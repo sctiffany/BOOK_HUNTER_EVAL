@@ -19,7 +19,7 @@ function findAll (PDO $connexion, int $limit = 6): array {
 }  
 
 function findOneById (PDO $connexion, int $id): array {
-        $sql = "SELECT *, c.name AS categoryName, a.id AS authorID
+        $sql = "SELECT *, b.id AS bookID, c.name AS categoryName, a.id AS authorID
         FROM books b
         INNER JOIN authors a ON b.author_id = a.id
         INNER JOIN categories c ON b.category_id = c.id
